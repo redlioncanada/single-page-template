@@ -9,9 +9,9 @@ Gulp workflow for LESS and ecmascript6. Minify, transpile, livereload.
 3. Command line to root folder, run `gulp` and/or `gulp production`  
 
 `gulp`
-  watches /src -> compiles to /debug
+  watches /src -> compiles to /debug  
   process/transpile, livereload
   
 `gulp production`
-  watches /src -> compiles to /
+  watches /src -> compiles to /  
   process/transpile, strip console logs, minify, livereload
