@@ -3,9 +3,9 @@ Gulp workflow for LESS and ecmascript6. Minify, transpile, livereload.
 
 # Setup
 1. Fork  
-2. Install live reload: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
-   Install npm: https://nodejs.org/download/
-   Install gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
+2. Install live reload: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en  
+   Install npm: https://nodejs.org/download/  
+   Install gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md  
 3. Command line to root folder, run `gulp` and/or `gulp production`  
 
 `gulp`
