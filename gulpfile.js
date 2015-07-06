@@ -6,7 +6,10 @@ var gulp = require("gulp"),
     minifyHtml = require('gulp-minify-html'),
 	minifyCss = require('gulp-minify-css'),
     reload = require('gulp-livereload'),
-    plugins = require('gulp-load-plugins')();
+    plugins = require('gulp-load-plugins')(),
+    babeloptions = {
+        compact: false
+    };
 
 gulp.task("default", function(){
     plugins.livereload.listen();
@@ -28,8 +31,10 @@ gulp.task("html", function() {
 });
 
 gulp.task("js", function () {
-  return gulp.src("src/js/**/*.js")
-    .pipe(babel())
+     var b = babel(babeloptions);
+    b.on('error',function(e){console.log('error parsing js: '+e);b.end()});
+    return gulp.src("src/js/**/*.js")
+    .pipe(b)
     .pipe(gulp.dest("debug/js"))
     .pipe(plugins.livereload());
 });
@@ -48,8 +53,10 @@ gulp.task("htmlmin", function() {
 });
 
 gulp.task("jsmin", function () {
-  return gulp.src("src/js/**/*.js")
-    .pipe(babel())
+    var b = babel(babeloptions);
+    b.on('error',function(e){console.log('error parsing js: '+e);b.end()});
+    return gulp.src("src/js/**/*.js")
+    .pipe(b)
     .pipe(stripDebug())
     .pipe(uglify())
     .pipe(gulp.dest("js"));
